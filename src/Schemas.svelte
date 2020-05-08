@@ -5,7 +5,8 @@
 	let schemas;
 
 	onMount(async () => {
-		await fetch(`http://0.0.0.0:3010/openclinica/s_02052020test`)
+		// await fetch(`http://0.0.0.0:3010/openclinica/s_02052020test`)
+		await fetch(`http://0.0.0.0:3010/openclinica/s_02052020test/study_subject`)
 			.then(r => r.json())
 			.then(data => {
 				schemas = data;
