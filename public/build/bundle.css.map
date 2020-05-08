@@ -1,0 +1,16 @@
+{
+  "version": 3,
+  "file": "bundle.css",
+  "sources": [
+    "../../App.svelte",
+    "../../Schema.svelte",
+    "../../Schemas.svelte"
+  ],
+  "sourcesContent": [
+    "<script>\n  import { onMount } from \"svelte\";\n  import Schema from \"./Schema.svelte\";\n  import Schemas from \"./Schemas.svelte\";\n\n  let schemas;\n  let schema;\n\n</script>\n\n<svelte:head>\n  <title>Svelte Open Clinica</title>\n</svelte:head>\n\n<style>\n\nmain {\n  background-color: lavenderblush;\n  font-size: 15px;\n}\n  h1 {\n    font-size: 25px;\n\t}\n\n</style>\n\n  <h1>The Open Clinica Svelte App</h1>\n<main>\n\t\t<Schemas {schemas} />\n</main>",
+    "<script>\n\texport let schema;\n</script>\n\n<style>\n\tarticle {\n\t\tmargin: 0 0 1em 0;\n\t}\n\n\th1 {\n\t\tfont-size: 1.4em;\n\t\tmargin: 0;\n\t\tdisplay: block;\n\t}\n</style>\n\n<article>\n\t\t<h1>{schema.name}</h1>\n\t\t<small>\n\t\t\tSchema : <b>{schema.schema}</b>\t\t\n\t\t</small><br/>\n\t\t<small>\n\t\t\tDatabase of : <b>{schema.database}</b>\n\t\t</small><br/>\n\t\t<!-- <small>\n\t\t\tContinent's size: <b>{continent.area}</b>\n\t\t</small> -->\n</article>",
+    "<script>\n\timport { onMount } from \"svelte\";\n\timport Schema from \"./Schema.svelte\";\n\n\tlet schemas;\n\n\tonMount(async () => {\n\t\tawait fetch(`http://0.0.0.0:3010/openclinica/s_02052020test`)\n\t\t\t.then(r => r.json())\n\t\t\t.then(data => {\n\t\t\t\tschemas = data;\n\t\t\t});\n\t})\n\n\n</script>\n\n<style>\n\t.loading {\n\t\topacity: 0;\n\t\tanimation: 0.4s 0.8s forwards fade-in;\n\t}\n\n\t@keyframes fade-in {\n\t\tfrom { opacity: 0; }\n\t\tto { opacity: 1; }\n\t}\n\n\tli {\n\t\tlist-style-type: georgian;\n\t}\n</style>\n\n{#if schemas}\n\t{#each schemas as schema }\n\t\t<ul>\n\t\t\t<li>\t\t\n\t\t\t\t<Schema {schema} />\n\t\t\t</li>\n\t\t</ul>\n\t{/each}\n\n{:else}\n\t<p class=\"loading\">loading...</p>\n{/if}\n"
+  ],
+  "names": [],
+  "mappings": "AAgBA,IAAI,cAAC,CAAC,AACJ,gBAAgB,CAAE,aAAa,CAC/B,SAAS,CAAE,IAAI,AACjB,CAAC,AACC,EAAE,cAAC,CAAC,AACF,SAAS,CAAE,IAAI,AAClB,CAAC;ACjBD,OAAO,eAAC,CAAC,AACR,MAAM,CAAE,CAAC,CAAC,CAAC,CAAC,GAAG,CAAC,CAAC,AAClB,CAAC,AAED,EAAE,eAAC,CAAC,AACH,SAAS,CAAE,KAAK,CAChB,MAAM,CAAE,CAAC,CACT,OAAO,CAAE,KAAK,AACf,CAAC;ACKD,QAAQ,eAAC,CAAC,AACT,OAAO,CAAE,CAAC,CACV,SAAS,CAAE,IAAI,CAAC,IAAI,CAAC,QAAQ,CAAC,sBAC/B,CAAC,AAED,WAAW,sBAAQ,CAAC,AACnB,IAAI,AAAC,CAAC,AAAC,OAAO,CAAE,CAAC,AAAE,CAAC,AACpB,EAAE,AAAC,CAAC,AAAC,OAAO,CAAE,CAAC,AAAE,CAAC,AACnB,CAAC,AAED,EAAE,eAAC,CAAC,AACH,eAAe,CAAE,QAAQ,AAC1B,CAAC"
+}
