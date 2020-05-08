@@ -65,7 +65,7 @@ let isEdit = false;
       <div class="col-md-6">
         <div class="card p-2 shadow">
           <div class="card-body">
-            <h5 class="card-title mb-4">Add New Participant</h5>
+            <h1 class="card-title mb-4">Add New Participant</h1>
             <form>
               <div class="form-group">
                 <label for="title">label</label>

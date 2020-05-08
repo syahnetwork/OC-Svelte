@@ -405,7 +405,7 @@ var app = (function () {
 
     function create_fragment(ctx) {
     	let article;
-    	let h1;
+    	let h10;
     	let t0;
     	let t1_value = /*schema*/ ctx[0].study_subject_id + "";
     	let t1;
@@ -432,7 +432,7 @@ var app = (function () {
     	let div4;
     	let div3;
     	let div2;
-    	let h5;
+    	let h11;
     	let t12;
     	let form;
     	let div0;
@@ -451,7 +451,7 @@ var app = (function () {
     	const block = {
     		c: function create() {
     			article = element("article");
-    			h1 = element("h1");
+    			h10 = element("h1");
     			t0 = text("study_subject_id = ");
     			t1 = text(t1_value);
     			t2 = space();
@@ -475,8 +475,8 @@ var app = (function () {
     			div4 = element("div");
     			div3 = element("div");
     			div2 = element("div");
-    			h5 = element("h5");
-    			h5.textContent = "Add New Participant";
+    			h11 = element("h1");
+    			h11.textContent = "Add New Participant";
     			t12 = space();
     			form = element("form");
     			div0 = element("div");
@@ -492,8 +492,8 @@ var app = (function () {
     			input1 = element("input");
     			t18 = space();
     			if (if_block) if_block.c();
-    			attr_dev(h1, "class", "svelte-1svv8z8");
-    			add_location(h1, file, 48, 2, 796);
+    			attr_dev(h10, "class", "svelte-1svv8z8");
+    			add_location(h10, file, 48, 2, 796);
     			add_location(b0, file, 51, 4, 876);
     			add_location(small0, file, 49, 2, 852);
     			add_location(br0, file, 53, 2, 911);
@@ -502,8 +502,8 @@ var app = (function () {
     			add_location(br1, file, 58, 2, 985);
     			attr_dev(article, "class", "svelte-1svv8z8");
     			add_location(article, file, 47, 0, 784);
-    			attr_dev(h5, "class", "card-title mb-4");
-    			add_location(h5, file, 67, 12, 1181);
+    			attr_dev(h11, "class", "card-title mb-4 svelte-1svv8z8");
+    			add_location(h11, file, 67, 12, 1181);
     			attr_dev(label0, "for", "title");
     			add_location(label0, file, 70, 16, 1308);
     			attr_dev(input0, "type", "text");
@@ -540,9 +540,9 @@ var app = (function () {
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, article, anchor);
-    			append_dev(article, h1);
-    			append_dev(h1, t0);
-    			append_dev(h1, t1);
+    			append_dev(article, h10);
+    			append_dev(h10, t0);
+    			append_dev(h10, t1);
     			append_dev(article, t2);
     			append_dev(article, small0);
     			append_dev(small0, t3);
@@ -564,7 +564,7 @@ var app = (function () {
     			append_dev(div5, div4);
     			append_dev(div4, div3);
     			append_dev(div3, div2);
-    			append_dev(div2, h5);
+    			append_dev(div2, h11);
     			append_dev(div2, t12);
     			append_dev(div2, form);
     			append_dev(form, div0);
